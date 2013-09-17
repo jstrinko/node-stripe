@@ -30,6 +30,12 @@ Access to the [Stripe](https://stripe.com/) [API](https://stripe.com/docs/api).
 All methods takes a callback as their last parameter. The callback is
 called with a Javascript `Error` (if any) and then the response.
 
+* `stripe.cards` - create, retrieve, update, delete and list cards
+	 * `.create(customer_id, data)` - [create a card for a customer](https://stripe.com/docs/api#create_card), takes a customer ID and a card definition as defined in the stripe API as an argument
+	 * `.retrieve(customer_id, card_id)` - [retrieve a card](https://stripe.com/docs/api#retrieve_card), takes a customer ID and a card id
+	 * `.update(customer_id, card_id, data)` - [update a card](https://stripe.com/docs/api#update_card), update card by customer and card id
+	 * `.del(customer_id, card_id)` - [delete a card](https://stripe.com/docs/api#delete_card), delete a card by customer and card id
+	 * `.list(customer_id, { count:x offset:y})` - [list cards for customer](https://stripe.com/docs/api#list_cards)
 * `stripe.charges` - create, retrieve, refund and list charges
    * `.capture(charge_id, data)` - [capture a charge](https://stripe.com/docs/api#charge_capture), takes the optional parameter data (amount, application_fee)
    * `.create(charge)` - [create a charge](https://stripe.com/docs/api#create_charge)
